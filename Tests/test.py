@@ -1,8 +1,11 @@
 import unittest
 
-import pruebas_unitarias.app_logic as app_logic
+import sys
+sys.path.append( 'src')
 
-import src.Models.Exceptions as Exceptions
+from Models import app_logic
+
+from Models import Exceptions
 
 
 class TestCalculatorTax(unittest.TestCase):

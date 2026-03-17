@@ -1,4 +1,4 @@
-import src.Models.Exceptions as Exceptions
+import Exceptions
 
 
 def calculate_iva(valor: float, impuesto: float) -> float:
