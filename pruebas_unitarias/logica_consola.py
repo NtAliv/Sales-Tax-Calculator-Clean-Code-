@@ -1,6 +1,6 @@
-import app_logic
+import pruebas_unitarias.app_logic as app_logic
 
-import Exceptions
+import src.Models.Exceptions as Exceptions
 
 """Este programa le permite calcular el precio final de un producto aplicando el impuesto de IVA, el Impuesto Nacional al Consumo (INC) y el impuesto de bolsa según corresponda."""
 
