@@ -12,10 +12,10 @@ class TestCalculatorTax(unittest.TestCase):
         # ENTRADAS
 
         valor: float = 20000
-        tax = 19 / 100
+        impuesto = 19 / 100
 
 
-        valor_calculado = app_logic.calculate_iva(valor, tax)
+        valor_calculado = app_logic.calculate_iva(valor, impuesto)
 
         valor_esperado = 23800
 
@@ -25,9 +25,9 @@ class TestCalculatorTax(unittest.TestCase):
         # ENTRADAS
 
         valor: float = 5800
-        tax = 5/100
+        impuesto = 5/100
 
-        valor_calculado = app_logic.calculate_iva(valor, tax)
+        valor_calculado = app_logic.calculate_iva(valor, impuesto)
 
         valor_esperado = 6090
 
@@ -37,9 +37,9 @@ class TestCalculatorTax(unittest.TestCase):
         # ENTRADAS
 
         valor: float = 4000
-        tax = 19 / 100
+        impuesto = 19 / 100
 
-        valor_calculado = app_logic.calculate_iva(valor, tax)
+        valor_calculado = app_logic.calculate_iva(valor, impuesto)
 
         valor_esperado = 4760
 
@@ -50,9 +50,9 @@ class TestCalculatorTax(unittest.TestCase):
         # ENTRADAS
   
         valor = 18000
-        tax = 0
+        impuesto = 0
 
-        valor_calculado = app_logic.calculate_iva(valor, tax)
+        valor_calculado = app_logic.calculate_iva(valor, impuesto)
         valor_esperado = 18000
 
         self.assertEqual(valor_calculado, valor_esperado)
@@ -62,14 +62,14 @@ class TestCalculatorTax(unittest.TestCase):
         # ENTRADAS
 
         valor = 112000
-        tax = 19/100
+        impuesto = 19/100
         grado = 40
         volumen = 750
         tarifa = 342
 
         calular_licor = app_logic.calculate_licores(valor, grado, tarifa, volumen)
 
-        valor_calculado = app_logic.calculate_iva(calular_licor, tax)
+        valor_calculado = app_logic.calculate_iva(calular_licor, impuesto)
         valor_esperado = 149559.2
 
         self.assertAlmostEqual(valor_calculado, valor_esperado, 2)
@@ -77,9 +77,9 @@ class TestCalculatorTax(unittest.TestCase):
     def test_impuesto_nacional_consumo(self):
         # ENTRADAS
         valor = 14000
-        tax = 10/100
+        impuesto = 10/100
 
-        calular_licor = app_logic.calculte_impuesto_nacional_consumo(valor, tax)
+        calular_licor = app_logic.calculte_impuesto_nacional_consumo(valor, impuesto)
 
         valor_esperado = 15400
 
@@ -89,10 +89,10 @@ class TestCalculatorTax(unittest.TestCase):
         # Impuesto de bolsa, se espera que el valor calculado sea igual al valor ingresado mas el impuesto.
          # ENTRADAS
     
-        tax = 75
+        impuesto = 75
         numero_bolsas = 10
         
-        calular_bolsa = app_logic.Calculate_bolsa(tax, numero_bolsas)
+        calular_bolsa = app_logic.Calculate_bolsa(impuesto, numero_bolsas)
 
         valor_esperado = 750
 
@@ -103,41 +103,41 @@ class TestCalculatorTax(unittest.TestCase):
         # ENTRADAS
 
         valor = -10000
-        tax = 19/100
+        impuesto = 19/100
 
         with self.assertRaises(Exceptions.NegativeValueError):
-            app_logic.calculate_iva(valor, tax)
+            app_logic.calculate_iva(valor, impuesto)
     
     def test_error_compra(self):
     #Caso de valor igual a 0, se espera que el valor calculado sea igual al mensaje de error.
         # ENTRADAS
         
         valor = 0
-        tax = 19/100
+        impuesto = 19/100
         
         with self.assertRaises(Exceptions.ZeroValueError):
-            app_logic.calculate_iva(valor, tax)
-            app_logic.calculte_impuesto_nacional_consumo(valor, tax)
-            app_logic.Calculate_bolsa(valor, tax, 10)
+            app_logic.calculate_iva(valor, impuesto)
+            app_logic.calculte_impuesto_nacional_consumo(valor, impuesto)
+            app_logic.Calculate_bolsa(impuesto, 10)
 
     def test_error_IVA(self):
     # Caso de IVA mayor al permitido, se espera que el valor calculado sea igual al mensaje de error.
         # ENTRADAS
         valor = 10000
-        tax = 20 /100
+        impuesto = 20 /100
 
         with self.assertRaises(Exceptions.InvalidTaxError):
-            app_logic.calculate_iva(valor, tax)      
+            app_logic.calculate_iva(valor, impuesto)      
     
 
     def test_errror_IVA_negativo(self):
     # Caso de IVA negativo, se espera que el valor calculado sea igual al mensaje de error.
         # ENTRADAS
         valor = 10000
-        tax = -10 /100
+        impuesto = -10 /100
 
         with self.assertRaises(Exceptions.NegativeIVAError):
-            app_logic.calculate_iva(valor, tax)
+            app_logic.calculate_iva(valor, impuesto)
     
 
 if __name__ == "__main__":

@@ -24,68 +24,68 @@ try:
 
         if opcion == "1":
             valor = float(input("Ingrese el precio del shampoo: "))
-            tax = 19 / 100
-            taxes = 75
+            impuesto = 19 / 100
+            impuestos = 75
             numero_bolsas = int(input("Ingrese el número de bolsas: "))
-            print (app_logic.Calculate_bolsa(taxes, numero_bolsas) + app_logic.calculate_iva(valor, tax))
+            print (app_logic.Calculate_bolsa(impuestos, numero_bolsas) + app_logic.calculate_iva(valor, impuesto))
 
         elif opcion == "2":
             valor = float(input("Ingrese el precio del Dolex: "))
-            tax = 5/ 100
-            taxes = 75
+            impuesto = 5/ 100
+            impuestos = 75
             numero_bolsas = int(input("Ingrese el número de bolsas: "))
-            print (app_logic.Calculate_bolsa(taxes, numero_bolsas) + app_logic.calculate_iva(valor, tax))
+            print (app_logic.Calculate_bolsa(impuestos, numero_bolsas) + app_logic.calculate_iva(valor, impuesto))
 
         elif opcion == "3":
             valor = float(input("Ingrese el precio de la barra de chocolate: "))
-            tax = 5 / 100
-            taxes = 75
+            impuesto = 5 / 100
+            impuestos = 75
             numero_bolsas = int(input("Ingrese el número de bolsas: "))
-            print (app_logic.Calculate_bolsa(taxes, numero_bolsas) + app_logic.calculate_iva(valor, tax))
+            print (app_logic.Calculate_bolsa(impuestos, numero_bolsas) + app_logic.calculate_iva(valor, impuesto))
 
         elif opcion == "4":
             valor = float(input("Ingrese el precio de la canasta de huevos: "))
-            tax = 0
-            taxes = 75
+            impuesto = 0
+            impuestos = 75
             numero_bolsas = int(input("Ingrese el número de bolsas: "))
-            print (app_logic.Calculate_bolsa(taxes, numero_bolsas) + app_logic.calculate_iva(valor, tax))
+            print (app_logic.Calculate_bolsa(impuestos, numero_bolsas) + app_logic.calculate_iva(valor, impuesto))
 
         elif opcion == "5":
             valor = float(input("Ingrese el precio del whisky: "))
-            tax = 19 / 100
+            impuesto = 19 / 100
             grado = 40
             volumen = 750
             tarifa = 342
-            taxes = 75
+            impuestos = 75
             calular_licor = app_logic.calculate_licores(valor, grado, tarifa, volumen)
             numero_bolsas = int(input("Ingrese el número de bolsas: "))
-            print (app_logic.Calculate_bolsa(taxes, numero_bolsas) + app_logic.calculate_iva(calular_licor, tax))           
+            print (app_logic.Calculate_bolsa(impuestos, numero_bolsas) + app_logic.calculate_iva(calular_licor, impuesto))           
             
 
         elif opcion == "6":
             valor = float(input("Ingrese el precio de los cigarrillos: "))
-            tax = 0.1
-            taxes = 75        
+            impuesto = 0.1
+            impuestos = 75        
             numero_bolsas = int(input("Ingrese el número de bolsas: "))
-            print (app_logic.Calculate_bolsa(taxes, numero_bolsas) + app_logic.calculate_impuesto_nacional_consumo(valor, tax))
+            print (app_logic.Calculate_bolsa(impuestos, numero_bolsas) + app_logic.calculate_impuesto_nacional_consumo(valor, impuesto))
 
         elif opcion == "7":
             valor = float(input("Ingrese el precio de la cerveza: "))
-            tax = 19 / 100
+            impuesto = 19 / 100
             grado = 10
-            taxes = 75
+            impuestos = 75
             volumen = 650   
             tarifa = 342     
             calular_licor = app_logic.calculate_licores(valor, grado, tarifa, volumen)
             numero_bolsas = int(input("Ingrese el número de bolsas: "))
-            print (app_logic.Calculate_bolsa(taxes, numero_bolsas) + app_logic.calculate_iva(calular_licor, tax))
+            print (app_logic.Calculate_bolsa(impuestos, numero_bolsas) + app_logic.calculate_iva(calular_licor, impuesto))
         
         elif opcion == "8":
             valor = float(input("Ingrese el precio de la barra de chocolate: "))
-            tax = 19 / 100
-            taxes = 75
+            impuesto = 19 / 100
+            impuestos = 75
             numero_bolsas = int(input("Ingrese el número de bolsas: "))
-            print (app_logic.Calculate_bolsa(taxes, numero_bolsas) + app_logic.calculate_iva(valor, tax))
+            print (app_logic.Calculate_bolsa(impuestos, numero_bolsas) + app_logic.calculate_iva(valor, impuesto))
 
         elif opcion == "0":
             print("Gracias por usar el programa. ¡Hasta luego!")
