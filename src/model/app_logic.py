@@ -4,7 +4,7 @@ sys.path.append("src")
 
 from model import Exceptions
 
-
+    
 def calculate_iva(valor: float, impuesto: float) -> float:
     """
     Calcula el precio final del producto aplicando el impuesto de IVA.
