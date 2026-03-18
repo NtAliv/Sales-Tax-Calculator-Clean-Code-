@@ -1,4 +1,8 @@
-import Exceptions 
+import sys
+
+sys.path.append("src")
+
+from model import Exceptions
 
 
 def calculate_iva(valor: float, impuesto: float) -> float:
@@ -66,6 +70,6 @@ def calculte_impuesto_nacional_consumo(valor: float, impuesto: float) -> float:
 
 def Calculate_bolsa(impuesto: float, numero_bolsas: int) -> float:
 
-    if numero_bolsas <= 0:
+    if numero_bolsas < 0:
         raise Exception.InvalidBolsasParametersError("ERROR: el número de bolsas debe ser un valor positivo")
     return (impuesto * numero_bolsas)
