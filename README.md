@@ -1,110 +1,148 @@
 # Calculadora de Impuestos de Venta
 
 ## Creadores
-- Luis Alejandro Correa  
-- Yohan Salazar  
+Luis Alejandro Correa  
+Yojan Esteban Salazar  
 
 ---
 
-## ¿Qué es y para qué es?
+# Descripción
+Este proyecto corresponde a una aplicación desarrollada para el curso **Código Limpio**.
 
-Este proyecto consiste en una **calculadora de impuestos de venta**, implementada inicialmente en un archivo de **Excel**, que simula el proceso de cálculo del precio final de productos aplicando distintos tipos de impuestos.
+La **Calculadora de Impuestos de Venta** permite calcular el precio final de un producto aplicando distintos tipos de impuestos presentes en el sistema tributario.
 
-El objetivo principal del proyecto es **demostrar de forma clara el flujo de procesamiento de datos en un sistema**, partiendo de **entradas (inputs)**, pasando por un **proceso de cálculo**, y generando **salidas (outputs)** verificables.
+El sistema recibe información básica del producto, identifica el tipo de impuesto aplicable y calcula automáticamente el valor final del producto.
 
-El archivo incluye **casos de prueba**, donde se comparan los resultados esperados con los resultados calculados automáticamente en Excel.
+Inicialmente el modelo fue implementado en **Excel**, donde se verificó el flujo de procesamiento de los datos y se validaron los resultados mediante casos de prueba.
 
 ---
 
-## ¿Cómo lo hago funcionar?
+# Objetivo
+Desarrollar una herramienta clara y estructurada que permita comprender el proceso de cálculo de impuestos de venta, aplicando los principios de **Código Limpio** y mostrando de forma clara el flujo de información dentro de un sistema.
 
-### Prerrequisitos
+---
 
-Antes de ejecutar el proyecto se debe contar con:
+# Funcionalidades principales
 
-- Microsoft Excel o cualquier software compatible con archivos `.xlsx`
-- Descargar o clonar este repositorio en su computador
+- Cálculo del precio final de productos aplicando distintos tipos de impuestos
+- Simulación de diferentes escenarios de cálculo
+- Comparación entre resultados esperados y resultados calculados
+- Validación de datos de entrada
+- Visualización clara del flujo **entrada → proceso → salida**
 
-### Ejecución
+---
+
+# Ejecución
+
+## Prerrequisitos
+Antes de ejecutar y utilizar el proyecto se debe contar con:
+
+- **Python 3.8 o superior**. Puede verificar su versión con:
+
+```bash
+python --version
+```
+
+
+- **Microsoft Excel** o cualquier software compatible con archivos `.xlsx`
+- Descargar o clonar este repositorio en el computador
+
+---
+
+## Ejecución del proyecto
 
 1. Ubicarse en la carpeta raíz del proyecto.
-2. Abrir el archivo de Excel incluido en el proyecto.
-3. Ingresar los datos solicitados en las columnas correspondientes.
-4. El sistema calculará automáticamente los impuestos y el precio final del producto.
+2. Ejecutar el siguiente comando
+
+```bash
+py src/view/logica_consola.py
+```
+3. Abrir el archivo de **Excel** incluido en el repositorio.
+4. Ingresar los datos solicitados en las columnas correspondientes.
+5. El sistema calculará automáticamente los impuestos y el precio final del producto.
 
 ---
 
-## ¿Cómo está hecho?
+# Construcción
 
-El proyecto está diseñado siguiendo un **modelo básico de procesamiento de información**, donde se identifican tres componentes principales: **entradas, proceso y salidas**.
+El proyecto se organiza en las siguientes carpetas:
 
-### Entradas (Inputs)
+**carpeta documentos**  
+Contiene documentación adicional relacionada con el proyecto.
 
-Las entradas del sistema corresponden a los datos iniciales necesarios para realizar los cálculos:
+**carpeta src**  
+Contiene el código fuente o archivos principales del sistema(model y view).
 
-- **Producto**  
-  Nombre del producto a evaluar.  
-  Ejemplos: Shampoo, Dolex, Barra de Chocolate.
+**carpeta Tests**  
+Incluye los casos de prueba utilizados para validar los cálculos del sistema.
 
-- **Valor**  
-  Precio base del producto sin impuestos aplicados.
-
-- **Impuestos**  
-  Porcentaje de impuesto aplicado al producto. Algunos ejemplos incluyen:
-
-  - IVA del 19%
-  - IVA del 5%
-  - INC del 10%
-  - Impuesto a licores
-  - Impuesto a bolsas
-
-Estas entradas representan la información proporcionada por el usuario para iniciar el proceso.
+Cada carpeta puede incluir un archivo `__init__.py` para permitir que Python reconozca el directorio como módulo en caso de implementaciones futuras.
 
 ---
 
-### Proceso
+# Entradas y salidas
 
-El proceso consiste en calcular el valor del impuesto y el precio final del producto.
+## Entradas
 
-Pasos del cálculo:
+| Campo | Descripción |
+|------|-------------|
+| Valor del producto | Precio base del producto |
+| Porcentaje de impuesto | Porcentaje correspondiente al impuesto |
 
-1. Se toma el **valor base del producto**.
-2. Se identifica el **porcentaje de impuesto aplicable**.
-3. Se calcula el **valor del impuesto**.
-4. Se suma el impuesto al valor base para obtener el **precio final**.
+Ejemplos de impuestos:
 
-**Fórmulas utilizadas:**
+- IVA 19%
+- IVA 5%
+- INC 10%
+- Impuesto a licores
+- Impuesto a bolsas
 
+---
 
+## Proceso
+
+El sistema calcula el valor del impuesto y el precio final del producto a partir del valor base.
+
+### Pasos del cálculo
+
+1. Se toma el valor base del producto.
+2. Se identifica el porcentaje de impuesto aplicable.
+3. Se calcula el valor del impuesto.
+4. Se suma el impuesto al valor base para obtener el precio final.
+
+### Fórmulas utilizadas
 
 Impuesto = Valor × Porcentaje_de_Impuesto
 Precio_Final = Valor + Impuesto
 
-
-Este procedimiento se repite para cada producto registrado en el archivo.
-
----
-
-### Salidas (Outputs)
-
-Las salidas corresponden a los resultados generados después de ejecutar el proceso.
-
-- **Salida**  
-  Precio final del producto luego de aplicar el impuesto.
-
-- **Excel**  
-  Valor calculado automáticamente dentro del archivo como verificación.
-
-En los casos analizados, los valores de **Salida** y **Excel** coinciden, lo que confirma la correcta ejecución del cálculo.
+Este procedimiento se repite para cada producto registrado.
 
 ---
 
-## Uso
+## Salidas
 
-El archivo permite simular distintos escenarios de cálculo de impuestos cambiando los valores de entrada.
+| Salida | Descripción |
+|------|-------------|
+| Precio Final | Valor total del producto después de aplicar el impuesto |
+| Resultado Excel | Valor calculado automáticamente dentro del archivo |
 
-Esto facilita:
+En los casos analizados, los valores calculados coinciden con los valores esperados, lo que confirma la correcta ejecución del cálculo.
 
-- Verificar cálculos de impuestos
-- Comparar resultados esperados
-- Analizar cómo cambia el precio final según el tipo de impuesto aplicad
+---
+
+# Casos de prueba
+
+El archivo de Excel incluye diferentes escenarios de prueba donde se comparan:
+
+- Resultados esperados
+- Resultados calculados automáticamente
+
+Esto permite verificar que las fórmulas y el proceso de cálculo funcionan correctamente.
+
+---
+
+# Institución
+
+**Universidad de Medellín**
+
+Curso: **Código Limpio**
